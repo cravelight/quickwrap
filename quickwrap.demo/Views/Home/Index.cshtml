@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var qbapiurl = "https://developer.intuit.com/docs/api/accounting";
+}
+
+<div class="jumbotron">
+    <h1>QuickWrap Demo</h1>
+    <p class="lead">QuickWrap is a client wrapper for the QuickBooks Online API.</p>
+    <ul>
+        <li><small>CRUD and filter standard entities</small></li>
+    </ul>
+    <p style="padding-top: 15px;"><a href="https://github.com/cravelight/quickwrap" class="btn btn-primary btn-lg">View Project on GitHub &raquo;</a></p>
+</div>
+
+<h2>CRUD & Filter</h2>
+<div class="row">
+    <div class="col-md-5 col-sm-12">
+        <h4>Transaction Entities</h4>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="list-unstyled">
+                    <li><a href="@qbapiurl/Bill" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Bill</a></li>
+                    <li><a href="@qbapiurl/BillPayment" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> BillPayment</a></li>
+                    <li><a href="@qbapiurl/CreditMemo" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CreditMemo</a></li>
+                    <li><a href="@qbapiurl/Deposit" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Deposit</a></li>
+                    <li><a href="@qbapiurl/Estimate" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Estimate</a></li>
+                    <li><a href="@qbapiurl/Invoice" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Invoice</a></li>
+                    <li><a href="@qbapiurl/JournalEntry" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> JournalEntry</a></li>
+                    <li><a href="@qbapiurl/Payment" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Payment</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="list-unstyled">
+                    <li><a href="@qbapiurl/Purchase" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Purchase</a></li>
+                    <li><a href="@qbapiurl/PurchaseOrder" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> PurchaseOrder</a></li>
+                    <li><a href="@qbapiurl/RefundReceipt" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> RefundReceipt</a></li>
+                    <li><a href="@qbapiurl/SalesReceipt" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> SalesReceipt</a></li>
+                    <li><a href="@qbapiurl/TimeActivity" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> TimeActivity</a></li>
+                    <li><a href="@qbapiurl/Transfer" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Transfer</a></li>
+                    <li><a href="@qbapiurl/VendorCredit" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> VendorCredit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-12">
+        <h4>Name List Entities</h4>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="list-unstyled">
+                    <li><a href="@qbapiurl/Account" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Account</a></li>
+                    <li><a href="@qbapiurl/Budget" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Budget</a></li>
+                    <li><a href="@qbapiurl/Class" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Class</a></li>
+                    <li><a href="@qbapiurl/CompanyCurrency" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CompanyCurrency</a></li>
+                    <li><a href="@qbapiurl/Customer" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Customer</a></li>
+                    <li><a href="@qbapiurl/Department" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Department</a></li>
+                    <li><a href="@qbapiurl/Employee" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Employee</a></li>
+                    <li><a href="@qbapiurl/Item" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Item</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="list-unstyled">
+                    <li><a href="@qbapiurl/PaymentMethod" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> PaymentMethod</a></li>
+                    <li><a href="@qbapiurl/TaxAgency" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> TaxAgency</a></li>
+                    <li><a href="@qbapiurl/TaxCode" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> TaxCode</a></li>
+                    <li><a href="@qbapiurl/TaxRate" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> TaxRate</a></li>
+                    <li><a href="@qbapiurl/TaxService" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> TaxService</a></li>
+                    <li><a href="@qbapiurl/Term" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Term</a></li>
+                    <li><a href="@qbapiurl/Vendor" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Vendor</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-sm-12">
+        <h4>Supporting Entities</h4>
+        <ul class="list-unstyled">
+            <li><a href="@qbapiurl/Attachable" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Attachable</a></li>
+            <li><a href="@qbapiurl/CompanyInfo" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CompanyInfo</a></li>
+            <li><a href="@qbapiurl/Entitlements" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Entitlements</a></li>
+            <li><a href="@qbapiurl/ExchangeRate" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> ExchangeRate</a></li>
+            <li><a href="@qbapiurl/Preferences" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Preferences</a></li>
+        </ul>
+    </div>
+</div>

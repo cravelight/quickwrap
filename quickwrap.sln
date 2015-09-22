@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quickwrap", "quickwrap\quic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quickwrap.tests", "quickwrap.tests\quickwrap.tests.csproj", "{66CEA9DC-E647-468E-A5A6-15F9762811D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quickwrap.demo", "quickwrap.demo\quickwrap.demo.csproj", "{71CF16D0-1C7E-4DC8-9983-D8F81A3BBE98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{66CEA9DC-E647-468E-A5A6-15F9762811D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66CEA9DC-E647-468E-A5A6-15F9762811D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66CEA9DC-E647-468E-A5A6-15F9762811D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CF16D0-1C7E-4DC8-9983-D8F81A3BBE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CF16D0-1C7E-4DC8-9983-D8F81A3BBE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CF16D0-1C7E-4DC8-9983-D8F81A3BBE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CF16D0-1C7E-4DC8-9983-D8F81A3BBE98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
