@@ -1,0 +1,68 @@
+﻿@model quickwrap.connections.OauthConnectionInfo
+@{
+    ViewBag.Title = "OAuth Setup";
+    var weHaveConsumerInfo = (!string.IsNullOrEmpty(Model.ConsumerKey) && !string.IsNullOrEmpty(Model.ConsumerSecret));
+}
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+<form method="POST">
+    <fieldset>
+        <legend>Start with this:</legend>
+        <div class="form-group">
+            <label>Authentication Url</label>
+            <p class="form-control-static">@Model.ApiUrl</p>
+        </div>
+        <div class="form-group">
+            <label for="consumerKey">Consumer Key</label>
+            <input type="text" class="form-control" id="consumerKey" name="consumerKey" placeholder="Enter your Consumer Key" value="@Model.ConsumerKey">
+        </div>
+        <div class="form-group">
+            <label for="consumerSecret">Consumer Secret</label>
+            <input type="text" class="form-control" id="consumerSecret" name="consumerSecret" placeholder="Enter your Consumer Secret" value="@Model.ConsumerKey">
+        </div>
+    </fieldset>
+    <div class="form-group" style="padding: 25px;">
+        @if (!weHaveConsumerInfo)
+        {
+            <button type="submit" class="btn btn-primary">Store ConsumerKey and ConsumerSecret in session</button>
+            <p class="help-block">If you don't know how to get this information <a href="https://developer.intuit.com/docs/0100_accounting/0050_your_first_request/0100_get_auth_tokens" target="_blank">click here for instructions</a>.</p>
+        }
+        @if (weHaveConsumerInfo && !Model.HasAuthenticated)
+        {
+            <ipp:connecttointuit></ipp:connecttointuit><br />
+            <p class="help-block">Clicking this button will initiate the oauth workflow.</p>
+        }
+    </div>
+    <fieldset>
+        <legend>This will be populated after the user authenticates the application</legend>
+        <div class="form-group">
+            <label for="accessToken">Access Token</label>
+            <input type="text" class="form-control" id="accessToken" readonly value="@Model.AccessToken">
+        </div>
+        <div class="form-group">
+            <label for="accessTokenSecret">Access Token Secret</label>
+            <input type="text" class="form-control" id="accessTokenSecret" readonly value="@Model.AccessTokenSecret">
+        </div>
+        <div class="form-group">
+            <label for="realmId">Realm Id</label>
+            <input type="text" class="form-control" id="realmId" readonly value="@Model.RealmId">
+        </div>
+    </fieldset>
+</form>
+
+@section scripts
+{
+    <script type="text/javascript" src="//appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            intuit.ipp.anywhere.setup({
+                grantUrl: '@ViewBag.UrlForTheRequestTokenEndpoint',
+                datasources: {
+                    quickbooks: true,
+                    payments: false
+                }
+            });
+        });
+    </script>
+}

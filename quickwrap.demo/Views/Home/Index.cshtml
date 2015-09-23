@@ -6,13 +6,10 @@
 <div class="jumbotron">
     <h1>QuickWrap Demo</h1>
     <p class="lead">QuickWrap is a client wrapper for the QuickBooks Online API.</p>
-    <ul>
-        <li><small>CRUD and filter standard entities</small></li>
-    </ul>
     <p style="padding-top: 15px;"><a href="https://github.com/cravelight/quickwrap" class="btn btn-primary btn-lg">View Project on GitHub &raquo;</a></p>
 </div>
 
-<h2>CRUD & Filter</h2>
+<h2>CRUD & Filter Standard Objects</h2>
 <div class="row">
     <div class="col-md-5 col-sm-12">
         <h4>Transaction Entities</h4>
@@ -79,5 +76,24 @@
             <li><a href="@qbapiurl/ExchangeRate" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> ExchangeRate</a></li>
             <li><a href="@qbapiurl/Preferences" class="text-muted"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Preferences</a></li>
         </ul>
+    </div>
+</div>
+
+<h2>OAuth Management</h2>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            System to system integrations often use a dedicated user account to perform actions on the target system.
+            In many cases the target system provides these credentials via an administration panel. QuickBooks does not.
+        </p>
+        <p>
+            Instead, QuickBooks provides a ConsumerKey and ConsumerSecret you can use to initiate an OAuth 1.0a workflow.
+            While this workflow is interactive, it generates a set of tokens that last for 6 months and can be renewed
+            programmattically as needed.
+        </p>
+        <p>
+            We've created a sample of this workflow you can use as the basis of your own.
+            <a class="btn btn-success" href="~/Auth" role="button">Launch OAuth Workflow</a>
+        </p>
     </div>
 </div>
