@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="consumerSecret">Consumer Secret</label>
-            <input type="text" class="form-control" id="consumerSecret" name="consumerSecret" placeholder="Enter your Consumer Secret" value="@Model.ConsumerKey">
+            <input type="text" class="form-control" id="consumerSecret" name="consumerSecret" placeholder="Enter your Consumer Secret" value="@Model.ConsumerSecret">
         </div>
     </fieldset>
     <div class="form-group" style="padding: 25px;">
@@ -30,7 +30,11 @@
         }
         @if (weHaveConsumerInfo && !Model.HasAuthenticated)
         {
-            <ipp:connecttointuit></ipp:connecttointuit><br />
+            <img src="/assets/img/C2QB_green_btn_lg_default.png" width="195" height="34" alt="Connect with QuickBooks"
+                 onmouseover=" this.src = '/assets/img/C2QB_green_btn_lg_hover.png' "
+                 onmouseout=" this.src = '/assets/img/C2QB_green_btn_lg_default.png' " 
+                 onclick="intuit.ipp.anywhere.controller.onConnectToIntuitClicked();" />
+            <br />
             <p class="help-block">Clicking this button will initiate the oauth workflow.</p>
         }
     </div>

@@ -12,13 +12,6 @@ namespace quickwrap.tests
 {
     public class ApiAccessTests
     {
-        private string _consumerKey = "qyprd7kWxwHpnq2YP9UkR4YuCb5ijz";
-        private string _consumerSecret = "puF6IGzEAGSZ6fMwrz1z6ssmJnRoZmt9iEy3gAsE";
-        private string _accessToken = "qyprdgz716hsYi7Z4SdnaixGqxXS6kniq08pch0uNM1ugJx5";
-        private string _accessTokenSecret = "GFwtQy0tfqTNFktaQrccBGMX2rKUIi4blKi1VwJ3";
-        private string _realmId = "404669156";
-        private string _appUrl = "https://sandbox-quickbooks.api.intuit.com/";
-
 
         [Fact]
         public void GetAllEmployees()
@@ -59,9 +52,22 @@ namespace quickwrap.tests
             };
         }
 
+
+
         private QboOauthConnection GetOauthConnection()
         {
-            return new QboOauthConnection(_appUrl, _accessToken, _accessTokenSecret, _consumerKey, _consumerSecret, _realmId);
+            return new QboOauthConnection(_connInfo);
         }
+
+        private readonly OauthConnectionInfo _connInfo = new QboOauthConnectionInfo
+        {
+            ConsumerKey = "qyprd7kWxwHpnq2YP9UkR4YuCb5ijz",
+            ConsumerSecret = "puF6IGzEAGSZ6fMwrz1z6ssmJnRoZmt9iEy3gAsE",
+            AccessToken = "qyprdgz716hsYi7Z4SdnaixGqxXS6kniq08pch0uNM1ugJx5",
+            AccessTokenSecret = "GFwtQy0tfqTNFktaQrccBGMX2rKUIi4blKi1VwJ3",
+            RealmId = "404669156",
+            ApiUrl = "https://sandbox-quickbooks.api.intuit.com/"
+        };
+
     }
 }

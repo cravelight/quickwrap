@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Eventing.Reader;
-using Intuit.Ipp.Core;
+﻿using Intuit.Ipp.Core;
 
 namespace quickwrap.connections
 {

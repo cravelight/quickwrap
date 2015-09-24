@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="connections\IQboConnection.cs" />
     <Compile Include="connections\OauthConnectionInfo.cs" />
+    <Compile Include="connections\OauthTokenManager.cs" />
     <Compile Include="connections\QboOauthConnectionInfo.cs" />
     <Compile Include="connections\QboOauthConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
