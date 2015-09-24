@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiAccessTests.cs" />
+    <Compile Include="ConnectedBase.cs" />
     <Compile Include="OauthTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

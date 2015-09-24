@@ -10,7 +10,11 @@ using Xunit;
 
 namespace quickwrap.tests
 {
-    public class ApiAccessTests
+    //todo: refactor and get rid of this class
+    // this was really just a starter sandbox
+    // we should move all the access testing into the OauthTests
+    // then the employee stuff can be moved into its own class
+    public class ApiAccessTests : ConnectedBase
     {
 
         [Fact]
@@ -54,20 +58,6 @@ namespace quickwrap.tests
 
 
 
-        private QboOauthConnection GetOauthConnection()
-        {
-            return new QboOauthConnection(_connInfo);
-        }
-
-        private readonly OauthConnectionInfo _connInfo = new QboOauthConnectionInfo
-        {
-            ConsumerKey = "qyprd7kWxwHpnq2YP9UkR4YuCb5ijz",
-            ConsumerSecret = "puF6IGzEAGSZ6fMwrz1z6ssmJnRoZmt9iEy3gAsE",
-            AccessToken = "qyprdgz716hsYi7Z4SdnaixGqxXS6kniq08pch0uNM1ugJx5",
-            AccessTokenSecret = "GFwtQy0tfqTNFktaQrccBGMX2rKUIi4blKi1VwJ3",
-            RealmId = "404669156",
-            ApiUrl = "https://sandbox-quickbooks.api.intuit.com/"
-        };
 
     }
 }

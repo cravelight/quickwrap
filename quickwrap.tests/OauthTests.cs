@@ -11,7 +11,7 @@ using Xunit;
 
 namespace quickwrap.tests
 {
-    public class OauthTests
+    public class OauthTests : ConnectedBase
     {
 
         [Fact]
