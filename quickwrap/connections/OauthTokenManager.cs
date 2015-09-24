@@ -1,6 +1,7 @@
 ﻿using DevDefined.OAuth.Consumer;
 using DevDefined.OAuth.Framework;
 using Intuit.Ipp.Exception;
+using Intuit.Ipp.PlatformService;
 
 namespace quickwrap.connections
 {
@@ -96,6 +97,26 @@ namespace quickwrap.connections
         }
 
 
+
+
+        #region Helpers for disconnecting and refreshing access tokens
+        
+        public static void Disconnect(OauthConnectionInfo connInfo)
+        {
+            //todo: tests for this...haven't even run it yet :)
+            PlatformService.Disconnect(connInfo.ConsumerKey, connInfo.ConsumerSecret, connInfo.AccessToken, connInfo.AccessTokenSecret);
+        }
+
+        public static OauthConnectionInfo Reconnect(OauthConnectionInfo connInfo)
+        {
+            //todo: tests for this...haven't even run it yet :)
+            var newCredentials = PlatformService.Reconnect(connInfo.ConsumerKey, connInfo.ConsumerSecret, connInfo.AccessToken, connInfo.AccessTokenSecret);
+            connInfo.AccessToken = newCredentials["AccessToken"];
+            connInfo.AccessTokenSecret = newCredentials["AccessTokenSecret"];
+            return connInfo;
+        }
+
+        #endregion // Helpers for disconnecting and refreshing access tokens
 
     }
 }

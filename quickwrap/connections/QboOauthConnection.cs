@@ -1,6 +1,5 @@
 ﻿using Intuit.Ipp.Core;
 using Intuit.Ipp.DataService;
-using Intuit.Ipp.PlatformService;
 using Intuit.Ipp.Security;
 
 namespace quickwrap.connections
@@ -30,23 +29,6 @@ namespace quickwrap.connections
             }
         }
         private DataService _dataService;
-
-
-        public static void Disconnect(OauthConnectionInfo connInfo)
-        {
-            PlatformService.Disconnect(connInfo.ConsumerKey, connInfo.ConsumerSecret, connInfo.AccessToken, connInfo.AccessTokenSecret);
-        }
-
-        public static OauthConnectionInfo Reconnect(OauthConnectionInfo connInfo)
-        {
-            var newCredentials = PlatformService.Reconnect(connInfo.ConsumerKey, connInfo.ConsumerSecret, connInfo.AccessToken, connInfo.AccessTokenSecret);
-            connInfo.AccessToken = newCredentials["AccessToken"];
-            connInfo.AccessTokenSecret = newCredentials["AccessTokenSecret"];
-            return connInfo;
-        }
-
-
-
 
     }
 }
