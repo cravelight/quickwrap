@@ -1,6 +1,4 @@
 ﻿using System.Web.Mvc;
-using DevDefined.OAuth.Consumer;
-using DevDefined.OAuth.Framework;
 using quickwrap.connections;
 
 namespace quickwrap.demo.Controllers

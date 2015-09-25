@@ -32,7 +32,7 @@
         {
             <img src="/assets/img/C2QB_green_btn_lg_default.png" width="195" height="34" alt="Connect with QuickBooks"
                  onmouseover=" this.src = '/assets/img/C2QB_green_btn_lg_hover.png' "
-                 onmouseout=" this.src = '/assets/img/C2QB_green_btn_lg_default.png' " 
+                 onmouseout=" this.src = '/assets/img/C2QB_green_btn_lg_default.png' "
                  onclick="intuit.ipp.anywhere.controller.onConnectToIntuitClicked();" />
             <br />
             <p class="help-block">Clicking this button will initiate the oauth workflow.</p>
@@ -59,14 +59,24 @@
 {
     <script type="text/javascript" src="//appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            intuit.ipp.anywhere.setup({
-                grantUrl: '@ViewBag.UrlForTheRequestTokenEndpoint',
-                datasources: {
-                    quickbooks: true,
-                    payments: false
-                }
-            });
+    jQuery(document).ready(function($) {
+        intuit.ipp.anywhere.setup({
+            grantUrl: '@ViewBag.UrlForTheRequestTokenEndpoint',
+            datasources: {
+                quickbooks: true,
+                payments: false
+            }
         });
+
+        // After the user has approved the app this page will be loaded in the popup window
+        // at the end of the OauthCallbackEndpoint. The code below closes the popup and 
+        // refreshes the original page. 
+        var userHasAuthenticated = ("@Model.HasAuthenticated" === "True");
+        if (window.opener && userHasAuthenticated) {
+            window.opener.location.reload();
+            window.close();
+        }
+
+    });
     </script>
 }
